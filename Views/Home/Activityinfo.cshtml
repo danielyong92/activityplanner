@@ -1,0 +1,17 @@
+<h1>Activity Details</h1>
+<a href="/Dashboard"> Home</a>
+<a href="logout">Log off</a><br>
+
+<h2>Title: @ViewBag.thisactivity.Title</h2>
+<h4>Event Coordinator: @ViewBag.theUser.FirstName<h4>
+
+<h4>Description: @ViewBag.thisactivity.Description</h4>
+
+Participants:
+<ul>
+    @foreach(var x in @ViewBag.acttouser.ActivityToUser)
+    {
+        <li>@x.Users.FirstName @x.Users.LastName</li>
+    }
+</ul>
+

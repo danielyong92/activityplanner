@@ -1,0 +1,25 @@
+<h1>Dojo Activity Center</h1>
+<a href="/Dashboard"> Home</a>
+<a href="logout">Log off</a>
+
+@model Activityclass
+<form asp-action="CreateActivity" asp-controller="Home" method="POST">
+    <h3>Create an Activity</h3>
+    <h4>Title: </h4><input type="text" asp-for="Title" class="form-group"><span asp-validation-for="Title"
+    class="error"></span><br>
+    <h4>Date: </h4><input type="date" min=@ViewBag.datetime asp-for="Date" class="form-group"><span asp-validation-for="Date"
+    class="error"></span><br>
+    <h4>Time: </h4><input type="text" asp-for="Time" class="form-group"><span asp-validation-for="Time"
+    class="error"></span><br>
+    <h4>Duration: </h4><input type="number" asp-for="Duration" class="form-group">
+    <select name="dur">
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+        <option value="days">Days</option>
+    </select>
+    <span asp-validation-for="Duration" class="error"></span><br>
+    <h4>Description: </h4><textarea class="form-group" asp-for="Description" cols="30" rows="10"></textarea>
+     <span asp-validation-for="Description" class="error"></span><br>
+     <input asp-for="UserID" type="hidden" value=@ViewBag.sessionid>
+     <input type="submit" class="button-primary" value="Create Activity">
+</form>

@@ -1,0 +1,10 @@
+@model Login
+
+        <form asp-action="Login" asp-controller="Home" method="POST">
+            <h1>Login</h1>
+            <h4>Email: </h4><input type="email" asp-for="LoginEmail" class="form-group"><span asp-validation-for="LoginEmail"
+                class="error"></span><br>
+            <h4>Password: </h4><input type="password" asp-for="LoginPassword" class="form-group"><span
+                asp-validation-for="LoginPassword" class="error"></span><br>
+            <input type="submit" value="Login">
+        </form>
